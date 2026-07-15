@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта людей</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Карта людей</h1>
+      <p>Введите данные — человек появится точкой на карте.</p>
+    </div>
+    <div class="counter">Людей: <strong id="count">0</strong></div>
+  </header>
+
+  <main>
+    <aside>
+      <form id="personForm">
+        <input type="hidden" id="personId">
+
+        <label>Имя *
+          <input id="name" required placeholder="Иван Петров">
+        </label>
+
+        <label>Телефон
+          <input id="phone" placeholder="+380...">
+        </label>
+
+        <label>Адрес *
+          <input id="address" required placeholder="Киев, Крещатик 1">
+        </label>
+
+        <label>Комментарий
+          <textarea id="notes" rows="3" placeholder="Дополнительная информация"></textarea>
+        </label>
+
+        <div class="form-buttons">
+          <button type="submit" id="saveButton">Добавить</button>
+          <button type="button" id="cancelButton" class="secondary hidden">Отмена</button>
+        </div>
+        <p id="message"></p>
+      </form>
+
+      <input id="search" class="search" placeholder="Поиск по имени, телефону или адресу">
+      <div id="peopleList"></div>
+    </aside>
+
+    <section id="map"></section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
